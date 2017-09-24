@@ -16,5 +16,15 @@ namespace AnuraLearners
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmReservation_Load(object sender, EventArgs e)
+        {
+            lblPaymentDate.Text = DateTime.Today.Date.ToShortDateString();
+        }
     }
 }
