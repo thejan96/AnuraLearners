@@ -10,3 +10,12 @@ C:\Users\ACER\Documents\GitHub\anuralearners\AnuraLearners\obj\Debug\AnuraLearne
 C:\Users\ACER\Documents\GitHub\anuralearners\AnuraLearners\obj\Debug\AnuraLearners.pdb
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.exe
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.pdb
+C:\Users\YMS\Documents\GitHub\AnuraLearners\AnuraLearners\bin\Debug\AnuraLearners.exe.config
+C:\Users\YMS\Documents\GitHub\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.exe
+C:\Users\YMS\Documents\GitHub\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.pdb
+C:\Users\YMS\Documents\GitHub\AnuraLearners\AnuraLearners\bin\Debug\AnuraLearners.exe
+C:\Users\YMS\Documents\GitHub\AnuraLearners\AnuraLearners\bin\Debug\AnuraLearners.pdb
+C:\Users\YMS\Documents\GitHub\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.csprojResolveAssemblyReference.cache
+C:\Users\YMS\Documents\GitHub\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.frmReservation.resources
+C:\Users\YMS\Documents\GitHub\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.Properties.Resources.resources
+C:\Users\YMS\Documents\GitHub\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.csproj.GenerateResource.Cache

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace AnuraLearners
 {
-    public partial class frmReservation : Form
+    public partial class Form2 : Form
     {
-        public frmReservation()
+        public Form2()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
