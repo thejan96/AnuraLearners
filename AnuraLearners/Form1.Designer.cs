@@ -92,6 +92,7 @@
             this.label2.Size = new System.Drawing.Size(124, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Customer Name";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtCustomerId
             // 
@@ -113,6 +114,7 @@
             this.label3.Size = new System.Drawing.Size(95, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "Customer Id";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -158,6 +160,7 @@
             this.label6.Size = new System.Drawing.Size(96, 21);
             this.label6.TabIndex = 3;
             this.label6.Text = "1st Payment";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -170,6 +173,7 @@
             this.label7.Size = new System.Drawing.Size(107, 21);
             this.label7.TabIndex = 3;
             this.label7.Text = "Payment Date";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // lblPaymentDate
             // 
@@ -180,6 +184,7 @@
             this.lblPaymentDate.Size = new System.Drawing.Size(107, 21);
             this.lblPaymentDate.TabIndex = 4;
             this.lblPaymentDate.Text = "Payment Date";
+            this.lblPaymentDate.Click += new System.EventHandler(this.lblPaymentDate_Click);
             // 
             // btnClear
             // 
