@@ -60,6 +60,12 @@
     <Compile Include="SecondPayment.Designer.cs">
       <DependentUpon>SecondPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThirdPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThirdPayment.Designer.cs">
+      <DependentUpon>ThirdPayment.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +81,9 @@
     </Compile>
     <EmbeddedResource Include="SecondPayment.resx">
       <DependentUpon>SecondPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThirdPayment.resx">
+      <DependentUpon>ThirdPayment.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

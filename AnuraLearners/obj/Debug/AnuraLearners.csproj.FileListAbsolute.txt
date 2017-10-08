@@ -16,3 +16,5 @@ D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.cs
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.frmReservation.resources
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.Properties.Resources.resources
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.csproj.GenerateResource.Cache
+D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.SecondPayment.resources
+D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.ThirdPayment.resources
