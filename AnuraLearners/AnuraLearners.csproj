@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exams.designer.cs">
+      <DependentUpon>Exams.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerateReports.designer.cs">
+      <DependentUpon>GenerateReports.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,8 +78,26 @@
     <Compile Include="ThirdPayment.Designer.cs">
       <DependentUpon>ThirdPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trials.designer.cs">
+      <DependentUpon>Trials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewPayments.designer.cs">
+      <DependentUpon>ViewPayments.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Exams.resx">
+      <DependentUpon>Exams.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerateReports.resx">
+      <DependentUpon>GenerateReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +114,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThirdPayment.resx">
       <DependentUpon>ThirdPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trials.resx">
+      <DependentUpon>Trials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewPayments.resx">
+      <DependentUpon>ViewPayments.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
