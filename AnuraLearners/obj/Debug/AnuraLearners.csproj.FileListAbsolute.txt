@@ -7,10 +7,6 @@ C:\Users\ACER\Documents\GitHub\anuralearners\AnuraLearners\obj\Debug\AnuraLearne
 C:\Users\ACER\Documents\GitHub\anuralearners\AnuraLearners\obj\Debug\AnuraLearners.csproj.GenerateResource.Cache
 C:\Users\ACER\Documents\GitHub\anuralearners\AnuraLearners\obj\Debug\AnuraLearners.exe
 C:\Users\ACER\Documents\GitHub\anuralearners\AnuraLearners\obj\Debug\AnuraLearners.pdb
-D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\bin\Debug\AnuraLearners.exe.config
-D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\bin\Debug\AnuraLearners.exe
-D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\bin\Debug\AnuraLearners.pdb
-D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.csprojResolveAssemblyReference.cache
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.Exams.resources
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.frmReservation.resources
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.GenerateReports.resources
@@ -20,5 +16,9 @@ D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.Th
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.Trials.resources
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.ViewPayments.resources
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.csproj.GenerateResource.Cache
+D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\bin\Debug\AnuraLearners.exe.config
+D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\bin\Debug\AnuraLearners.exe
+D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\bin\Debug\AnuraLearners.pdb
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.exe
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.pdb
+D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.csprojResolveAssemblyReference.cache

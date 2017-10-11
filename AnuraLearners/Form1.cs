@@ -17,39 +17,23 @@ namespace AnuraLearners
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmReservation_Load(object sender, EventArgs e)
         {
             lblPaymentDate.Text = DateTime.Today.Date.ToShortDateString();
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPaymentDate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
+            DbConnection db = new DbConnection();
+            int ret = db.addPayment(txtCustomerId.Text,Int32.Parse( txtFirstPayment.Text));
+            if (ret==1)
+            {
+                MessageBox.Show("Successfully Payed");
+            }
+            else
+            {
+                MessageBox.Show("Payment Unsuccessful");
+            }
         }
     }
 }

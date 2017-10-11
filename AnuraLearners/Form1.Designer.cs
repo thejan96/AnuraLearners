@@ -71,6 +71,7 @@
             this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // txtCustomerName
             // 
@@ -79,7 +80,7 @@
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(214, 26);
             this.txtCustomerName.TabIndex = 2;
-            this.txtCustomerName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            //this.txtCustomerName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -92,7 +93,7 @@
             this.label2.Size = new System.Drawing.Size(124, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Customer Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            //label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtCustomerId
             // 
@@ -101,7 +102,7 @@
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.Size = new System.Drawing.Size(214, 26);
             this.txtCustomerId.TabIndex = 2;
-            this.txtCustomerId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            //this.txtCustomerId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -114,7 +115,7 @@
             this.label3.Size = new System.Drawing.Size(95, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "Customer Id";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            //this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -147,7 +148,7 @@
             this.txtFirstPayment.Name = "txtFirstPayment";
             this.txtFirstPayment.Size = new System.Drawing.Size(214, 26);
             this.txtFirstPayment.TabIndex = 2;
-            this.txtFirstPayment.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            //this.txtFirstPayment.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label6
             // 
@@ -160,7 +161,7 @@
             this.label6.Size = new System.Drawing.Size(96, 21);
             this.label6.TabIndex = 3;
             this.label6.Text = "1st Payment";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            //this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -173,7 +174,7 @@
             this.label7.Size = new System.Drawing.Size(107, 21);
             this.label7.TabIndex = 3;
             this.label7.Text = "Payment Date";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            //this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // lblPaymentDate
             // 
@@ -184,7 +185,7 @@
             this.lblPaymentDate.Size = new System.Drawing.Size(107, 21);
             this.lblPaymentDate.TabIndex = 4;
             this.lblPaymentDate.Text = "Payment Date";
-            this.lblPaymentDate.Click += new System.EventHandler(this.lblPaymentDate_Click);
+            //this.lblPaymentDate.Click += new System.EventHandler(this.lblPaymentDate_Click);
             // 
             // btnClear
             // 
