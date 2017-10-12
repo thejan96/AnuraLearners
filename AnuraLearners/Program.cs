@@ -16,7 +16,8 @@ namespace AnuraLearners
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmReservation());
+            //Application.Run(new frmFirstPayment());
+            Application.Run(new frmSecondPayment());
         }
     }
 }

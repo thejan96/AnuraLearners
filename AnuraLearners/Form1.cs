@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AnuraLearners
 {
-    public partial class frmReservation : Form
+    public partial class frmFirstPayment : Form
     {
-        public frmReservation()
+        public frmFirstPayment()
         {
             InitializeComponent();
         }
@@ -25,7 +25,11 @@ namespace AnuraLearners
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             DbConnection db = new DbConnection();
-            int ret = db.addPayment(txtCustomerId.Text,Int32.Parse( txtFirstPayment.Text));
+            Payment p1 = new Payment();
+            p1.CustomerId = txtCustomerId.Text;
+            p1.FirstPayment = Int32.Parse(txtFirstPayment.Text);
+            p1.FirstPaymentDate =Convert.ToDateTime( DateTime.Today.ToShortDateString());
+            int ret = db.addFirstPayment(p1);
             if (ret==1)
             {
                 MessageBox.Show("Successfully Payed");

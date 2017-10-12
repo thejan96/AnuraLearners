@@ -1,6 +1,6 @@
 ﻿namespace AnuraLearners
 {
-    partial class SecondPayment
+    partial class frmSecondPayment
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtRestPayment = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPaymentDate = new System.Windows.Forms.TextBox();
             this.lblPaymentDate = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -37,17 +40,14 @@
             this.txtCustomerId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
-            this.txtPaymentDate = new System.Windows.Forms.TextBox();
-            this.txtRestPayment = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.grpb_second_payment = new System.Windows.Forms.GroupBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.txtSecondPaymentDate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtSecondPayment = new System.Windows.Forms.TextBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -73,6 +73,34 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "First Payment Details";
+            // 
+            // txtRestPayment
+            // 
+            this.txtRestPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRestPayment.Location = new System.Drawing.Point(169, 230);
+            this.txtRestPayment.Name = "txtRestPayment";
+            this.txtRestPayment.Size = new System.Drawing.Size(214, 26);
+            this.txtRestPayment.TabIndex = 14;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
+            this.label1.Location = new System.Drawing.Point(8, 230);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 21);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Rest Payment";
+            // 
+            // txtPaymentDate
+            // 
+            this.txtPaymentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPaymentDate.Location = new System.Drawing.Point(169, 184);
+            this.txtPaymentDate.Name = "txtPaymentDate";
+            this.txtPaymentDate.Size = new System.Drawing.Size(214, 26);
+            this.txtPaymentDate.TabIndex = 12;
             // 
             // lblPaymentDate
             // 
@@ -156,34 +184,6 @@
             this.txtCustomerName.Size = new System.Drawing.Size(214, 26);
             this.txtCustomerName.TabIndex = 5;
             // 
-            // txtPaymentDate
-            // 
-            this.txtPaymentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaymentDate.Location = new System.Drawing.Point(169, 184);
-            this.txtPaymentDate.Name = "txtPaymentDate";
-            this.txtPaymentDate.Size = new System.Drawing.Size(214, 26);
-            this.txtPaymentDate.TabIndex = 12;
-            // 
-            // txtRestPayment
-            // 
-            this.txtRestPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRestPayment.Location = new System.Drawing.Point(169, 230);
-            this.txtRestPayment.Name = "txtRestPayment";
-            this.txtRestPayment.Size = new System.Drawing.Size(214, 26);
-            this.txtRestPayment.TabIndex = 14;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
-            this.label1.Location = new System.Drawing.Point(8, 230);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 21);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Rest Payment";
-            // 
             // grpb_second_payment
             // 
             this.grpb_second_payment.Controls.Add(this.btnClear);
@@ -199,6 +199,35 @@
             this.grpb_second_payment.TabIndex = 15;
             this.grpb_second_payment.TabStop = false;
             this.grpb_second_payment.Text = "Second Payment Details";
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(174, 156);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(95, 48);
+            this.btnClear.TabIndex = 15;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(284, 157);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(95, 48);
+            this.btnSubmit.TabIndex = 14;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // txtSecondPaymentDate
             // 
@@ -250,34 +279,6 @@
             this.txtSecondPayment.Size = new System.Drawing.Size(214, 26);
             this.txtSecondPayment.TabIndex = 8;
             // 
-            // btnSubmit
-            // 
-            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
-            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(284, 157);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(95, 48);
-            this.btnSubmit.TabIndex = 14;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = false;
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(174, 156);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(95, 48);
-            this.btnClear.TabIndex = 15;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            // 
             // btnHome
             // 
             this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
@@ -305,7 +306,7 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Second Payment";
             // 
-            // SecondPayment
+            // frmSecondPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -316,7 +317,7 @@
             this.Controls.Add(this.grpb_second_payment);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "SecondPayment";
+            this.Name = "frmSecondPayment";
             this.Text = "SecondPayment";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

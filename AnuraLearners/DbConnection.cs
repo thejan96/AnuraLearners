@@ -26,11 +26,20 @@ namespace AnuraLearners
             con.Close();
         }
 
-        public int addPayment(string customerid,double paymentval)
+        public int addFirstPayment(Payment p)
         {
             openCon();
-            string query = "INSERT INTO [dbo].[Payments] ([CustomerId],[FirstPayment],[FirstPaymentDate]) VALUES ('" + customerid + "','" + paymentval + "','" + DateTime.Today.ToShortDateString() + "')";
+            string query = "INSERT INTO [dbo].[Payments] ([CustomerId],[FirstPayment],[FirstPaymentDate]) VALUES ('" + p.CustomerId + "','" + p.FirstPayment + "','" + p.FirstPaymentDate + "')";
             cmd = new SqlCommand(query,con);
+            return cmd.ExecuteNonQuery();
+            closeCon();
+        }
+
+        public int addSecondPayment(Payment p)
+        {
+            openCon();
+            string query = "UPDATE [dbo].[Payments]   SET[SecondPayment] = '" + p.SecoundPayment + "',[SecondPaymentDate] = '" + p.SecoundPaymentDate + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
+            cmd = new SqlCommand(query, con);
             return cmd.ExecuteNonQuery();
             closeCon();
         }

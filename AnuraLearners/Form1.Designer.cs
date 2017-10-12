@@ -1,6 +1,6 @@
 ﻿namespace AnuraLearners
 {
-    partial class frmReservation
+    partial class frmFirstPayment
     {
         /// <summary>
         /// Required designer variable.
@@ -80,7 +80,6 @@
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(214, 26);
             this.txtCustomerName.TabIndex = 2;
-            //this.txtCustomerName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -93,7 +92,6 @@
             this.label2.Size = new System.Drawing.Size(124, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Customer Name";
-            //label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtCustomerId
             // 
@@ -102,7 +100,6 @@
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.Size = new System.Drawing.Size(214, 26);
             this.txtCustomerId.TabIndex = 2;
-            //this.txtCustomerId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -115,7 +112,6 @@
             this.label3.Size = new System.Drawing.Size(95, 21);
             this.label3.TabIndex = 3;
             this.label3.Text = "Customer Id";
-            //this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -148,7 +144,6 @@
             this.txtFirstPayment.Name = "txtFirstPayment";
             this.txtFirstPayment.Size = new System.Drawing.Size(214, 26);
             this.txtFirstPayment.TabIndex = 2;
-            //this.txtFirstPayment.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label6
             // 
@@ -161,7 +156,6 @@
             this.label6.Size = new System.Drawing.Size(96, 21);
             this.label6.TabIndex = 3;
             this.label6.Text = "1st Payment";
-            //this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -174,7 +168,6 @@
             this.label7.Size = new System.Drawing.Size(107, 21);
             this.label7.TabIndex = 3;
             this.label7.Text = "Payment Date";
-            //this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // lblPaymentDate
             // 
@@ -185,7 +178,6 @@
             this.lblPaymentDate.Size = new System.Drawing.Size(107, 21);
             this.lblPaymentDate.TabIndex = 4;
             this.lblPaymentDate.Text = "Payment Date";
-            //this.lblPaymentDate.Click += new System.EventHandler(this.lblPaymentDate_Click);
             // 
             // btnClear
             // 
@@ -236,7 +228,7 @@
             this.lblFullPayment.TabIndex = 7;
             this.lblFullPayment.Text = "Full Payment";
             // 
-            // frmReservation
+            // frmFirstPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -258,8 +250,8 @@
             this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label1);
-            this.Name = "frmReservation";
-            this.Text = "Reservation";
+            this.Name = "frmFirstPayment";
+            this.Text = "First Payement";
             this.Load += new System.EventHandler(this.frmReservation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
