@@ -47,7 +47,7 @@ namespace AnuraLearners
         public int addThirdPayment(Payment p)
         {
             openCon();
-            string query = "UPDATE [dbo].[Payments]   SET[SecondPayment] = '" + p.SecoundPayment + "',[SecondPaymentDate] = '" + p.SecoundPaymentDate + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
+            string query = "UPDATE [dbo].[Payments]   SET[ThirdPayment] = '" + p.ThirdPayment + "',[ThirdPaymentDate] = '" + p.ThirdPaymentDate + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
             cmd = new SqlCommand(query, con);
             return cmd.ExecuteNonQuery();
 
