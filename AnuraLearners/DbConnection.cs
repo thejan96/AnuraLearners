@@ -29,7 +29,7 @@ namespace AnuraLearners
         public int addFirstPayment(Payment p)
         {
             openCon();
-            string query = "INSERT INTO [dbo].[Payments] ([CustomerId],[FirstPayment],[FirstPaymentDate]) VALUES ('" + p.CustomerId + "','" + p.FirstPayment + "','" + p.FirstPaymentDate + "')";
+            string query = "UPDATE [dbo].[Payments]   SET[FirstPayment] = '" + p.FirstPayment + "',[FirstPaymentDate] = '" + p.FirstPaymentDate + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
             cmd = new SqlCommand(query,con);
             return cmd.ExecuteNonQuery();
             
@@ -51,6 +51,32 @@ namespace AnuraLearners
             cmd = new SqlCommand(query, con);
             return cmd.ExecuteNonQuery();
 
+        }
+
+        public Payment getDetails(string customerId, int x)
+        {
+            openCon();
+            SqlDataReader dr;
+            Payment p1 = new Payment();
+            switch (x)
+            {
+                case 1:
+                    string query = "Select FirstPayment,FirstPaymentDate,SecondPayment,SecondPaymentDate FROM [dbo].[Payments] where [CustomerId] = '" + customerId + "' ";
+                    cmd = new SqlCommand(query, con);
+                    dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        p1.FirstPayment = Convert.ToSingle(dr[0]);
+                        p1.FirstPaymentDate = Convert.ToDateTime(dr[1]);
+                        p1.SecoundPayment = Convert.ToSingle(dr[2]);
+                        p1.SecoundPaymentDate = Convert.ToDateTime(dr[3]);
+                    }
+                    return p1;
+                    break;
+                default:
+                    return p1;
+                    break;
+            }
         }
 
 

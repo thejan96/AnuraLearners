@@ -306,6 +306,7 @@
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.Size = new System.Drawing.Size(214, 26);
             this.txtCustomerId.TabIndex = 4;
+            this.txtCustomerId.Leave += new System.EventHandler(this.txtCustomerId_Leave);
             // 
             // label2
             // 
@@ -354,6 +355,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmThirdPayment";
             this.Text = "ThirdPayment";
+            this.Load += new System.EventHandler(this.frmThirdPayment_Load);
             this.grpb_second_payment.ResumeLayout(false);
             this.grpb_second_payment.PerformLayout();
             this.groupBox1.ResumeLayout(false);

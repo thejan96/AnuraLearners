@@ -16,10 +16,10 @@ namespace AnuraLearners
         {
             InitializeComponent();
         }
-
+        DbConnection db;
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            DbConnection db = new DbConnection();
+            db = new DbConnection();
             Payment p1 = new Payment();
             p1.CustomerId = txtCustomerId.Text;
             p1.ThirdPayment  = Int32.Parse(txtThirdPayment.Text);
@@ -35,6 +35,23 @@ namespace AnuraLearners
                 MessageBox.Show("Payment Unsuccessful");
             }
             db.closeCon();
+        }
+
+        private void frmThirdPayment_Load(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void txtCustomerId_Leave(object sender, EventArgs e)
+        {
+            db = new DbConnection();
+            Payment x = new Payment();
+            x = db.getDetails(txtCustomerId.Text, 1);
+            txtFirstPayment.Text = x.FirstPayment.ToString();
+            txtSecondPayement.Text = x.SecoundPayment.ToString();
+            txtPaymentDate.Text = x.FirstPaymentDate.ToShortDateString();
+            txtSecondPaymentDate.Text = x.SecoundPaymentDate.ToShortDateString();
         }
     }
 }
