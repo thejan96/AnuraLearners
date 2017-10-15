@@ -24,15 +24,16 @@ namespace AnuraLearners
             p1.CustomerId = txtCustomerId.Text;
             p1.SecoundPayment = Int32.Parse(txtSecondPayment.Text);
             p1.SecoundPaymentDate = Convert.ToDateTime(DateTime.Today.ToShortDateString());
-             db.addSecondPayment(p1);
-            //if (ret == 1)
-            //{
-            //    MessageBox.Show("Successfully Payed");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Payment Unsuccessful");
-            //}
+            int ret = db.addSecondPayment(p1);
+            if (ret == 1)
+            {
+                MessageBox.Show("Successfully Payed");
+                db.closeCon();
+            }
+            else
+            {
+                MessageBox.Show("Payment Unsuccessful");
+            }
         }
     }
 }
