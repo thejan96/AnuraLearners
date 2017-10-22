@@ -32,7 +32,6 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCustomerId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.lblRegistrationDate = new System.Windows.Forms.Label();
             this.lblFullPayment = new System.Windows.Forms.Label();
+            this.txtCustomerId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -75,6 +75,8 @@
             // 
             // txtCustomerName
             // 
+            this.txtCustomerName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCustomerName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerName.Location = new System.Drawing.Point(199, 65);
             this.txtCustomerName.Name = "txtCustomerName";
@@ -92,14 +94,6 @@
             this.label2.Size = new System.Drawing.Size(124, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Customer Name";
-            // 
-            // txtCustomerId
-            // 
-            this.txtCustomerId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerId.Location = new System.Drawing.Point(198, 110);
-            this.txtCustomerId.Name = "txtCustomerId";
-            this.txtCustomerId.Size = new System.Drawing.Size(214, 26);
-            this.txtCustomerId.TabIndex = 2;
             // 
             // label3
             // 
@@ -228,12 +222,23 @@
             this.lblFullPayment.TabIndex = 7;
             this.lblFullPayment.Text = "Full Payment";
             // 
+            // txtCustomerId
+            // 
+            this.txtCustomerId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCustomerId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCustomerId.Location = new System.Drawing.Point(199, 111);
+            this.txtCustomerId.Name = "txtCustomerId";
+            this.txtCustomerId.Size = new System.Drawing.Size(214, 20);
+            this.txtCustomerId.TabIndex = 8;
+            this.txtCustomerId.Enter += new System.EventHandler(this.txtCustomerId_Enter);
+            // 
             // frmFirstPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(556, 406);
+            this.Controls.Add(this.txtCustomerId);
             this.Controls.Add(this.lblFullPayment);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnClear);
@@ -245,14 +250,13 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtCustomerId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label1);
             this.Name = "frmFirstPayment";
             this.Text = "First Payement";
-            this.Load += new System.EventHandler(this.frmReservation_Load);
+            this.Load += new System.EventHandler(this.frmFirstPayment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,7 +268,6 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCustomerId;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -276,6 +279,7 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Label lblRegistrationDate;
         private System.Windows.Forms.Label lblFullPayment;
+        private System.Windows.Forms.TextBox txtCustomerId;
     }
 }
 

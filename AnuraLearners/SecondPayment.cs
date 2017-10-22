@@ -35,5 +35,14 @@ namespace AnuraLearners
                 MessageBox.Show("Payment Unsuccessful");
             }
         }
+
+        private void frmSecondPayment_Load(object sender, EventArgs e)
+        {
+            DbConnection db = new DbConnection();
+            AutoCompleteStringCollection idlist = db.autoload(1);
+            AutoCompleteStringCollection namelist = db.autoload(2);
+            txtCustomerId.AutoCompleteCustomSource = idlist;
+            txtCustomerName.AutoCompleteCustomSource = namelist;
+        }
     }
 }

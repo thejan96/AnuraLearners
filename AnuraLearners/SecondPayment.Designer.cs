@@ -319,6 +319,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "frmSecondPayment";
             this.Text = "SecondPayment";
+            this.Load += new System.EventHandler(this.frmSecondPayment_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.grpb_second_payment.ResumeLayout(false);

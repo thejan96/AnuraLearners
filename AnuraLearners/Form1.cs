@@ -16,15 +16,27 @@ namespace AnuraLearners
         {
             InitializeComponent();
         }
+        DbConnection db;
 
-        private void frmReservation_Load(object sender, EventArgs e)
+
+        private void frmFirstPayment_Load(object sender, EventArgs e)
         {
+            db = new DbConnection();
+            AutoCompleteStringCollection idlist = new AutoCompleteStringCollection();
+            idlist = db.autoload(1);
+            txtCustomerId.AutoCompleteCustomSource = idlist;
+            AutoCompleteStringCollection namelist = db.autoload(2);
+            namelist = db.autoload(2);
+            txtCustomerName.AutoCompleteCustomSource = namelist;
             lblPaymentDate.Text = DateTime.Today.Date.ToShortDateString();
         }
-        
+
+
+
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            DbConnection db = new DbConnection();
+            db = new DbConnection();
             Payment p1 = new Payment();
             p1.CustomerId = txtCustomerId.Text;
             p1.FirstPayment = Int32.Parse(txtFirstPayment.Text);
@@ -38,6 +50,12 @@ namespace AnuraLearners
             {
                 MessageBox.Show("Payment Unsuccessful");
             }
+        }
+
+        private void txtCustomerId_Enter(object sender, EventArgs e)
+        {
+           
+            
         }
     }
 }

@@ -35,13 +35,12 @@
             this.txtThirdPaymentDate = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtThirdPayment = new System.Windows.Forms.TextBox();
+            this.txtFullPayment = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtSecondPaymentDate = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtSecondPayement = new System.Windows.Forms.TextBox();
-            this.txtRestPayment = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPaymentDate = new System.Windows.Forms.TextBox();
             this.lblPaymentDate = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.btnHome = new System.Windows.Forms.Button();
+            this.txtThirdPayment = new System.Windows.Forms.TextBox();
             this.grpb_second_payment.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,12 +71,12 @@
             // 
             // grpb_second_payment
             // 
+            this.grpb_second_payment.Controls.Add(this.txtThirdPayment);
             this.grpb_second_payment.Controls.Add(this.btnClear);
             this.grpb_second_payment.Controls.Add(this.btnSubmit);
             this.grpb_second_payment.Controls.Add(this.txtThirdPaymentDate);
             this.grpb_second_payment.Controls.Add(this.label8);
             this.grpb_second_payment.Controls.Add(this.label9);
-            this.grpb_second_payment.Controls.Add(this.txtThirdPayment);
             this.grpb_second_payment.Location = new System.Drawing.Point(409, 63);
             this.grpb_second_payment.Name = "grpb_second_payment";
             this.grpb_second_payment.Size = new System.Drawing.Size(394, 299);
@@ -145,13 +145,13 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "3rd Payment";
             // 
-            // txtThirdPayment
+            // txtFullPayment
             // 
-            this.txtThirdPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThirdPayment.Location = new System.Drawing.Point(174, 55);
-            this.txtThirdPayment.Name = "txtThirdPayment";
-            this.txtThirdPayment.Size = new System.Drawing.Size(214, 26);
-            this.txtThirdPayment.TabIndex = 8;
+            this.txtFullPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullPayment.Location = new System.Drawing.Point(167, 317);
+            this.txtFullPayment.Name = "txtFullPayment";
+            this.txtFullPayment.Size = new System.Drawing.Size(214, 26);
+            this.txtFullPayment.TabIndex = 14;
             // 
             // groupBox1
             // 
@@ -159,7 +159,7 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtSecondPayement);
-            this.groupBox1.Controls.Add(this.txtRestPayment);
+            this.groupBox1.Controls.Add(this.txtFullPayment);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtPaymentDate);
             this.groupBox1.Controls.Add(this.lblPaymentDate);
@@ -217,14 +217,6 @@
             this.txtSecondPayement.Size = new System.Drawing.Size(214, 26);
             this.txtSecondPayement.TabIndex = 15;
             // 
-            // txtRestPayment
-            // 
-            this.txtRestPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRestPayment.Location = new System.Drawing.Point(167, 317);
-            this.txtRestPayment.Name = "txtRestPayment";
-            this.txtRestPayment.Size = new System.Drawing.Size(214, 26);
-            this.txtRestPayment.TabIndex = 14;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -233,9 +225,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
             this.label1.Location = new System.Drawing.Point(6, 317);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 21);
+            this.label1.Size = new System.Drawing.Size(100, 21);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Rest Payment";
+            this.label1.Text = "Full Payment";
             // 
             // txtPaymentDate
             // 
@@ -301,11 +293,15 @@
             // 
             // txtCustomerId
             // 
+            this.txtCustomerId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtCustomerId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCustomerId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerId.Location = new System.Drawing.Point(169, 92);
             this.txtCustomerId.Name = "txtCustomerId";
             this.txtCustomerId.Size = new System.Drawing.Size(214, 26);
             this.txtCustomerId.TabIndex = 4;
+            this.txtCustomerId.Enter += new System.EventHandler(this.txtCustomerId_Enter);
+            this.txtCustomerId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerId_KeyDown);
             this.txtCustomerId.Leave += new System.EventHandler(this.txtCustomerId_Leave);
             // 
             // label2
@@ -322,11 +318,14 @@
             // 
             // txtCustomerName
             // 
+            this.txtCustomerName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCustomerName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerName.Location = new System.Drawing.Point(170, 47);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(214, 26);
             this.txtCustomerName.TabIndex = 5;
+            this.txtCustomerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerName_KeyDown);
             // 
             // btnHome
             // 
@@ -342,6 +341,14 @@
             this.btnHome.Size = new System.Drawing.Size(58, 49);
             this.btnHome.TabIndex = 21;
             this.btnHome.UseVisualStyleBackColor = false;
+            // 
+            // txtThirdPayment
+            // 
+            this.txtThirdPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThirdPayment.Location = new System.Drawing.Point(174, 57);
+            this.txtThirdPayment.Name = "txtThirdPayment";
+            this.txtThirdPayment.Size = new System.Drawing.Size(214, 26);
+            this.txtThirdPayment.TabIndex = 19;
             // 
             // frmThirdPayment
             // 
@@ -375,9 +382,9 @@
         private System.Windows.Forms.TextBox txtThirdPaymentDate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtThirdPayment;
+        private System.Windows.Forms.TextBox txtFullPayment;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtRestPayment;
+        //private System.Windows.Forms.TextBox txtThirdPayment;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPaymentDate;
         private System.Windows.Forms.Label lblPaymentDate;
@@ -392,5 +399,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtSecondPayement;
+        private System.Windows.Forms.TextBox txtThirdPayment;
     }
 }
