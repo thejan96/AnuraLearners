@@ -153,6 +153,7 @@ namespace AnuraLearners
                 {
                     c1.customerID = dr[0].ToString();
                     c1.customerName = dr[1].ToString();
+                    c1.RegDate = Convert.ToDateTime( dr[8]);
                 }
                 return c1;
                 con.Close();
@@ -166,6 +167,7 @@ namespace AnuraLearners
                 {
                     c1.customerID = dr[0].ToString();
                     c1.customerName = dr[1].ToString();
+                    c1.RegDate = Convert.ToDateTime(dr[8]);
                 }
                 return c1;
                 con.Close();

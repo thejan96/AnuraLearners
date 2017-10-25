@@ -57,5 +57,58 @@ namespace AnuraLearners
            
             
         }
+
+        private void txtCustomerId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txtCustomerId.Text.Length == 10)
+                {
+                    db = new DbConnection();
+                    Customer c = new Customer();
+                    Payment p = new Payment();
+                    c = db.getCustomerDetails(txtCustomerId.Text, 1);
+                    db.closeCon();
+                    txtCustomerName.Text = c.customerName.ToString();
+
+                   
+                    p = db.getDetails(txtCustomerId.Text, 1);
+                    db.closeCon();
+
+                    lblRegistrationDate.Text = c.RegDate.ToShortDateString();
+                    txtCustomerId.Focus();
+                    lblFullPayment.Text = p.FullPayment.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Please Enter a correct ID No.", "Lenght Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void txtCustomerName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txtCustomerName.Text.Length > 3)
+                {
+                    db = new DbConnection();
+                    Customer c = new Customer();
+                    Payment p = new Payment();
+                    c = db.getCustomerDetails(txtCustomerName.Text, 2);
+                    txtCustomerId.Text = c.customerID.ToString();
+                    db.closeCon();
+                    p = db.getDetails(txtCustomerId.Text, 1);
+                    db.closeCon();
+                    
+                    lblRegistrationDate.Text = c.RegDate.ToShortDateString();
+                    txtCustomerId.Focus();
+                    lblFullPayment.Text = p.FullPayment.ToString();
+
+
+
+                }
+            }
+        }
     }
 }

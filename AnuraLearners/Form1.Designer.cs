@@ -82,6 +82,7 @@
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(214, 26);
             this.txtCustomerName.TabIndex = 2;
+            this.txtCustomerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerName_KeyDown);
             // 
             // label2
             // 
@@ -231,6 +232,7 @@
             this.txtCustomerId.Size = new System.Drawing.Size(214, 20);
             this.txtCustomerId.TabIndex = 8;
             this.txtCustomerId.Enter += new System.EventHandler(this.txtCustomerId_Enter);
+            this.txtCustomerId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerId_KeyDown);
             // 
             // frmFirstPayment
             // 
