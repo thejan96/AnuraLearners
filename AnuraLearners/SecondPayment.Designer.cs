@@ -188,6 +188,7 @@
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(214, 26);
             this.txtCustomerName.TabIndex = 5;
+            this.txtCustomerName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerName_KeyDown);
             // 
             // grpb_second_payment
             // 

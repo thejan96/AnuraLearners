@@ -47,14 +47,22 @@ namespace AnuraLearners
             
         }
 
-        public int addSecondPayment(Payment p)
+        public int addSecondPayment(Payment p,float RestPayment)
         {
+            int res = 0, res1 = 0;
             openCon();
             string query = "UPDATE [dbo].[Payments]   SET[SecondPayment] = '" + p.SecoundPayment + "',[SecondPaymentDate] = '" + p.SecoundPaymentDate + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
             cmd = new SqlCommand(query, con);
-            return cmd.ExecuteNonQuery();
-            con.Close();
-            
+            res = cmd.ExecuteNonQuery();
+            if (res == 1)
+            {
+                string query1 = "UPDATE [dbo].[Payments]   SET[FullPayment] = '" + RestPayment + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
+                cmd = new SqlCommand(query1, con);
+                res1 = cmd.ExecuteNonQuery();
+            }
+            closeCon();
+            return res1;
+
         }
 
         public int addThirdPayment(Payment p)

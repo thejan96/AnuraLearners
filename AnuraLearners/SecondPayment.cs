@@ -17,22 +17,62 @@ namespace AnuraLearners
             InitializeComponent();
         }
         DbConnection db;
+        float fullPayment = 0;
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            DbConnection db = new DbConnection();
-            Payment p1 = new Payment();
-            p1.CustomerId = txtCustomerId.Text;
-            p1.SecoundPayment = Int32.Parse(txtSecondPayment.Text);
-            p1.SecoundPaymentDate = Convert.ToDateTime(DateTime.Today.ToShortDateString());
-            int ret = db.addSecondPayment(p1);
-            if (ret == 1)
+            if (txtFirstPayment.Text != "")
             {
-                MessageBox.Show("Successfully Payed");
-                db.closeCon();
+                try
+                {
+                    if (txtSecondPayment.Text != "" && int.Parse(txtSecondPayment.Text) > 0 && txtSecondPayment.Text != "0")
+                    {
+                        if (int.Parse(txtSecondPayment.Text) < int.Parse(txtRestPayment.Text))
+                        {
+                            db = new DbConnection();
+                            Payment p1 = new Payment();
+                            p1.CustomerId = txtCustomerId.Text;
+                            p1.SecoundPayment = float.Parse(txtSecondPayment.Text);
+                            p1.SecoundPaymentDate = Convert.ToDateTime(DateTime.Today.ToShortDateString());
+                            float RestPayement = fullPayment - float.Parse(txtSecondPayment.Text);
+                            int ret = db.addSecondPayment(p1, RestPayement);
+                            if (ret == 1)
+                            {
+                                MessageBox.Show("Successfully Payed");
+                                clearAllFields();
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Payment Unsuccessful");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Second Payment Must be Lesser than Full Payment");
+                            txtFirstPayment.Focus();
+                        }
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Second Payment must have a value greater than 0");
+                        txtFirstPayment.Focus();
+                    }
+                }
+                catch (FormatException)
+                {
+
+                    MessageBox.Show("Payment Value must be a Number");
+                    txtFirstPayment.Text = "";
+                    txtFirstPayment.Focus();
+                }
+
+
             }
             else
             {
-                MessageBox.Show("Payment Unsuccessful");
+                MessageBox.Show("Customer is not Valid. Please Enter a valid Customer Name/ID");
             }
         }
 
@@ -45,7 +85,7 @@ namespace AnuraLearners
             AutoCompleteStringCollection namelist = db.autoload(2);
             namelist = db.autoload(2);
             txtCustomerName.AutoCompleteCustomSource = namelist;
-            lblPaymentDate.Text = DateTime.Today.Date.ToShortDateString();
+            txtSecondPaymentDate.Text = DateTime.Today.Date.ToShortDateString();
         }
 
         private void txtCustomerId_KeyDown(object sender, KeyEventArgs e)
@@ -58,26 +98,49 @@ namespace AnuraLearners
                     Customer c = new Customer();
                     Payment p = new Payment();
                     c = db.getCustomerDetails(txtCustomerId.Text, 1);
-                    txtCustomerName.Text = c.customerName.ToString();
-
-
-                    p = db.getDetails(txtCustomerId.Text, 2);
-                    if (p.SecoundPayment > 0)
+                    try
                     {
-                        MessageBox.Show("Second Payment is already Settled with : Rs." + p.SecoundPayment.ToString() + "/=");
+                        txtCustomerName.Text = c.customerName.ToString();
+
+
+                        p = db.getDetails(txtCustomerId.Text, 2);
+                        if (p.SecoundPayment > 0)
+                        {
+                            MessageBox.Show("Second Payment is already Settled with : Rs." + p.SecoundPayment.ToString() + "/=");
+                            clearAllFields();
+                        }
+                        else
+                        {
+                            if (p.FirstPayment == 0)
+                            {
+                                MessageBox.Show("Please Enter as First Payment", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Hide();
+                                frmFirstPayment f = new frmFirstPayment();
+                                f.Show();
+                            }
+                            fullPayment = p.FullPayment;
+                            txtFirstPayment.Text = p.FirstPayment.ToString();
+                            txtPaymentDate.Text = p.FirstPaymentDate.ToShortDateString();
+                            txtRestPayment.Text = Convert.ToString(Convert.ToSingle(p.FullPayment) - Convert.ToSingle(p.FirstPayment));
+                            txtSecondPayment.Focus();
+                        }
+                    }
+                    catch (NullReferenceException)
+                    {
+
+                        MessageBox.Show("Please Enter a correct ID No.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         clearAllFields();
+                        txtCustomerId.Focus();
+
                     }
-                    else
-                    {
-                        txtFirstPayment.Text = p.FirstPayment.ToString();
-                        txtPaymentDate.Text = p.FirstPaymentDate.ToShortDateString();
-                    }
+                    
 
 
                 }
                 else
                 {
                     MessageBox.Show("Please Enter a correct ID No.", "Lenght Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    clearAllFields();
                 }
             }
         }
@@ -92,6 +155,59 @@ namespace AnuraLearners
             txtSecondPaymentDate.Text = "";
             txtRestPayment.Text = "";
 
+        }
+
+        private void txtCustomerName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txtCustomerName.Text.Length > 3)
+                {
+                    db = new DbConnection();
+                    Customer c = new Customer();
+                    Payment p = new Payment();
+                    c = db.getCustomerDetails(txtCustomerName.Text, 2);
+                    try
+                    {
+                        txtCustomerId.Text = c.customerID.ToString();
+
+                        p = db.getDetails(txtCustomerId.Text, 2);
+                        if (p.SecoundPayment > 0)
+                        {
+                            MessageBox.Show("Second Payment is already Settled with : Rs." + p.SecoundPayment.ToString() + "/=");
+                            clearAllFields();
+                        }
+                        else
+                        {
+                            if (p.FirstPayment == 0)
+                            {
+                                MessageBox.Show("Please Enter as First Payment", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Hide();
+                                frmFirstPayment f = new frmFirstPayment();
+                                f.Show();
+                            }
+                            fullPayment = p.FullPayment;
+                            txtFirstPayment.Text = p.FirstPayment.ToString();
+                            txtPaymentDate.Text = p.FirstPaymentDate.ToShortDateString();
+                            txtRestPayment.Text = Convert.ToString(Convert.ToSingle(p.FullPayment) - Convert.ToSingle(p.FirstPayment));
+                            txtSecondPayment.Focus();
+                        }
+                    }
+                    catch (NullReferenceException)
+                    {
+                        MessageBox.Show("Please Enter a Valid Customer ID/Name");
+                        clearAllFields();
+                        txtCustomerName.Focus();
+
+                    }
+               
+                }
+                else
+                {
+                    MessageBox.Show("Please Enter a correct ID No.", "Lenght Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    clearAllFields();
+                }
+            }
         }
     }
 }
