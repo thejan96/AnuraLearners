@@ -72,27 +72,69 @@ namespace AnuraLearners
             openCon();
             SqlDataReader dr;
             Payment p1 = new Payment();
-            switch (x)
+            if (x==1)
             {
-                case 1:
-                    string query = "Select FirstPayment,FirstPaymentDate,SecondPayment,SecondPaymentDate,FullPayment FROM [dbo].[Payments] where [CustomerId] = '" + customerId + "' ";
-                    cmd = new SqlCommand(query, con);
-                    dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                string query = "Select FirstPayment,FirstPaymentDate,FullPayment FROM [dbo].[Payments] where [CustomerId] = '" + customerId + "' ";
+                cmd = new SqlCommand(query, con);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    try
+                    {
+                        p1.FullPayment = Convert.ToSingle(dr[2]);
+                        p1.FirstPayment = Convert.ToSingle(dr[0]);
+                        p1.FirstPaymentDate = Convert.ToDateTime(dr[1]);
+                       
+                    }
+                    catch (InvalidCastException)
+                    {
+
+                        
+                    }
+                    
+                }
+            }
+            else if (x==2)
+            {
+                string query = "Select FirstPayment,FirstPaymentDate,SecondPayment,SecondPaymentDate,FullPayment FROM [dbo].[Payments] where [CustomerId] = '" + customerId + "' ";
+                cmd = new SqlCommand(query, con);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    try
                     {
                         p1.FirstPayment = Convert.ToSingle(dr[0]);
                         p1.FirstPaymentDate = Convert.ToDateTime(dr[1]);
+                        p1.FullPayment = Convert.ToSingle(dr[4]);
                         p1.SecoundPayment = Convert.ToSingle(dr[2]);
                         p1.SecoundPaymentDate = Convert.ToDateTime(dr[3]);
-                        p1.FullPayment = Convert.ToSingle(dr[4]);
+                        
                     }
-                    return p1;
-                    break;
-                default:
-                    return p1;
-                    break;
+                    catch (InvalidCastException)
+                    {
+
+                        
+                    }
+                    
+                }
+            }
+            else if (x == 3)
+            {
+                string query = "Select FirstPayment,FirstPaymentDate,SecondPayment,SecondPaymentDate,ThirdPayment,FullPayment FROM [dbo].[Payments] where [CustomerId] = '" + customerId + "' ";
+                cmd = new SqlCommand(query, con);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    p1.FirstPayment = Convert.ToSingle(dr[0]);
+                    p1.FirstPaymentDate = Convert.ToDateTime(dr[1]);
+                    p1.SecoundPayment = Convert.ToSingle(dr[2]);
+                    p1.SecoundPaymentDate = Convert.ToDateTime(dr[3]);
+                    p1.ThirdPayment = Convert.ToSingle(dr[4]);
+                    p1.FullPayment = Convert.ToSingle(dr[5]);
+                }
             }
             con.Close();
+            return p1;
         }
 
         public AutoCompleteStringCollection autoload(int x)
@@ -162,8 +204,9 @@ namespace AnuraLearners
                     c1.customerName = dr[1].ToString();
                     c1.RegDate = Convert.ToDateTime( dr[8]);
                 }
-                return c1;
                 con.Close();
+                return c1;
+                
             }
             else if (x==2)
             {
@@ -176,8 +219,9 @@ namespace AnuraLearners
                     c1.customerName = dr[1].ToString();
                     c1.RegDate = Convert.ToDateTime(dr[8]);
                 }
-                return c1;
                 con.Close();
+                return c1;
+               
             }
             else
             {

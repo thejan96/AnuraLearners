@@ -22,9 +22,6 @@ namespace AnuraLearners
         private void frmFirstPayment_Load(object sender, EventArgs e)
         {
             db = new DbConnection();
-
-
-
             AutoCompleteStringCollection idlist = new AutoCompleteStringCollection();
             idlist = db.autoload(1);
             txtCustomerId.AutoCompleteCustomSource = idlist;
@@ -36,22 +33,62 @@ namespace AnuraLearners
         
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            db = new DbConnection();
-            Payment p1 = new Payment();
-            p1.CustomerId = txtCustomerId.Text;
-            p1.FirstPayment = float.Parse(txtFirstPayment.Text);
-            p1.FirstPaymentDate =Convert.ToDateTime( DateTime.Today.ToShortDateString());
-            float RestPayement = float.Parse(lblFullPayment.Text) - float.Parse(txtFirstPayment.Text);
-            int ret = db.addFirstPayment(p1,RestPayement);
-            if (ret==1)
+            if (lblFullPayment.Text != "Full Payment")
             {
-                MessageBox.Show("Successfully Payed");
-                clearAllFields();
+                try
+                {
+                    if(txtFirstPayment.Text != "" && int.Parse(txtFirstPayment.Text) > 0 && txtFirstPayment.Text != "0")
+                {
+                        if (int.Parse(txtFirstPayment.Text) < int.Parse(lblFullPayment.Text))
+                        {
+                            db = new DbConnection();
+                            Payment p1 = new Payment();
+                            p1.CustomerId = txtCustomerId.Text;
+                            p1.FirstPayment = float.Parse(txtFirstPayment.Text);
+                            p1.FirstPaymentDate = Convert.ToDateTime(DateTime.Today.ToShortDateString());
+                            float RestPayement = float.Parse(lblFullPayment.Text) - float.Parse(txtFirstPayment.Text);
+                            int ret = db.addFirstPayment(p1, RestPayement);
+                            if (ret == 1)
+                            {
+                                MessageBox.Show("Successfully Payed");
+                                clearAllFields();
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Payment Unsuccessful");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("First Payment Must be Lesser than Full Payment");
+                            txtFirstPayment.Focus();
+                        }
+
+
+                    }
+                else
+                {
+                        MessageBox.Show("First Payment must have a value greater than 0");
+                        txtFirstPayment.Focus();
+                    }
+                }
+                catch (FormatException)
+                {
+
+                    MessageBox.Show("Payment Value must be a Number");
+                    txtFirstPayment.Text = "";
+                    txtFirstPayment.Focus();
+                }
+                
+                
             }
             else
             {
-                MessageBox.Show("Payment Unsuccessful");
+                MessageBox.Show("Customer is not Valid. Please Enter a valid Customer Name/ID");
             }
+           
+
         }
 
         private void txtCustomerId_Enter(object sender, EventArgs e)
@@ -70,16 +107,23 @@ namespace AnuraLearners
                     Customer c = new Customer();
                     Payment p = new Payment();
                     c = db.getCustomerDetails(txtCustomerId.Text, 1);
-                    db.closeCon();
                     txtCustomerName.Text = c.customerName.ToString();
 
                    
                     p = db.getDetails(txtCustomerId.Text, 1);
-                    db.closeCon();
+                    if (p.FirstPayment>0)
+                    {
+                        MessageBox.Show("First Payment is already Settled with : Rs."+p.FirstPayment.ToString()+"/=");
+                        clearAllFields();
+                    }
+                    else
+                    {
+                        lblRegistrationDate.Text = c.RegDate.ToShortDateString();
+                        txtCustomerId.Focus();
+                        lblFullPayment.Text = p.FullPayment.ToString();
+                    }
 
-                    lblRegistrationDate.Text = c.RegDate.ToShortDateString();
-                    txtCustomerId.Focus();
-                    lblFullPayment.Text = p.FullPayment.ToString();
+                    
                 }
                 else
                 {
@@ -99,14 +143,19 @@ namespace AnuraLearners
                     Payment p = new Payment();
                     c = db.getCustomerDetails(txtCustomerName.Text, 2);
                     txtCustomerId.Text = c.customerID.ToString();
-                    db.closeCon();
-                    p = db.getDetails(txtCustomerId.Text, 1);
-                    db.closeCon();
                     
-                    lblRegistrationDate.Text = c.RegDate.ToShortDateString();
-                    txtCustomerId.Focus();
-                    lblFullPayment.Text = p.FullPayment.ToString();
-
+                    p = db.getDetails(txtCustomerId.Text, 1);
+                    if (p.FirstPayment > 0)
+                    {
+                        MessageBox.Show("First Payment is already Settled with : Rs." + p.FirstPayment.ToString() + "/=");
+                        clearAllFields();
+                    }
+                    else
+                    {
+                        lblRegistrationDate.Text = c.RegDate.ToShortDateString();
+                        txtCustomerId.Focus();
+                        lblFullPayment.Text = p.FullPayment.ToString();
+                    }
 
 
                 }
@@ -120,6 +169,11 @@ namespace AnuraLearners
             lblRegistrationDate.Text = "Registration Date";
             lblFullPayment.Text = "Full Payment";
             txtFirstPayment.Text = "";
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearAllFields();
         }
     }
 }
