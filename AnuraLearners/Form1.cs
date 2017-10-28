@@ -22,6 +22,9 @@ namespace AnuraLearners
         private void frmFirstPayment_Load(object sender, EventArgs e)
         {
             db = new DbConnection();
+
+
+
             AutoCompleteStringCollection idlist = new AutoCompleteStringCollection();
             idlist = db.autoload(1);
             txtCustomerId.AutoCompleteCustomSource = idlist;
@@ -30,21 +33,20 @@ namespace AnuraLearners
             txtCustomerName.AutoCompleteCustomSource = namelist;
             lblPaymentDate.Text = DateTime.Today.Date.ToShortDateString();
         }
-
-
-
-
+        
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             db = new DbConnection();
             Payment p1 = new Payment();
             p1.CustomerId = txtCustomerId.Text;
-            p1.FirstPayment = Int32.Parse(txtFirstPayment.Text);
+            p1.FirstPayment = float.Parse(txtFirstPayment.Text);
             p1.FirstPaymentDate =Convert.ToDateTime( DateTime.Today.ToShortDateString());
-            int ret = db.addFirstPayment(p1);
+            float RestPayement = float.Parse(lblFullPayment.Text) - float.Parse(txtFirstPayment.Text);
+            int ret = db.addFirstPayment(p1,RestPayement);
             if (ret==1)
             {
                 MessageBox.Show("Successfully Payed");
+                clearAllFields();
             }
             else
             {
@@ -109,6 +111,15 @@ namespace AnuraLearners
 
                 }
             }
+        }
+
+        public void clearAllFields()
+        {
+            txtCustomerId.Text = "";
+            txtCustomerName.Text = "";
+            lblRegistrationDate.Text = "Registration Date";
+            lblFullPayment.Text = "Full Payment";
+            txtFirstPayment.Text = "";
         }
     }
 }

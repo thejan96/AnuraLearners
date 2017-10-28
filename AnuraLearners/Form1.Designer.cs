@@ -168,7 +168,7 @@
             // 
             this.lblPaymentDate.AutoSize = true;
             this.lblPaymentDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaymentDate.Location = new System.Drawing.Point(255, 298);
+            this.lblPaymentDate.Location = new System.Drawing.Point(195, 299);
             this.lblPaymentDate.Name = "lblPaymentDate";
             this.lblPaymentDate.Size = new System.Drawing.Size(107, 21);
             this.lblPaymentDate.TabIndex = 4;
@@ -207,7 +207,7 @@
             // 
             this.lblRegistrationDate.AutoSize = true;
             this.lblRegistrationDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrationDate.Location = new System.Drawing.Point(255, 158);
+            this.lblRegistrationDate.Location = new System.Drawing.Point(195, 158);
             this.lblRegistrationDate.Name = "lblRegistrationDate";
             this.lblRegistrationDate.Size = new System.Drawing.Size(130, 21);
             this.lblRegistrationDate.TabIndex = 4;
@@ -217,7 +217,7 @@
             // 
             this.lblFullPayment.AutoSize = true;
             this.lblFullPayment.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullPayment.Location = new System.Drawing.Point(255, 205);
+            this.lblFullPayment.Location = new System.Drawing.Point(195, 205);
             this.lblFullPayment.Name = "lblFullPayment";
             this.lblFullPayment.Size = new System.Drawing.Size(100, 21);
             this.lblFullPayment.TabIndex = 7;
@@ -227,9 +227,10 @@
             // 
             this.txtCustomerId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtCustomerId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtCustomerId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustomerId.Location = new System.Drawing.Point(199, 111);
             this.txtCustomerId.Name = "txtCustomerId";
-            this.txtCustomerId.Size = new System.Drawing.Size(214, 20);
+            this.txtCustomerId.Size = new System.Drawing.Size(214, 24);
             this.txtCustomerId.TabIndex = 8;
             this.txtCustomerId.Enter += new System.EventHandler(this.txtCustomerId_Enter);
             this.txtCustomerId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerId_KeyDown);

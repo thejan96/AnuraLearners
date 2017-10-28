@@ -29,13 +29,21 @@ namespace AnuraLearners
             con.Close();
         }
 
-        public int addFirstPayment(Payment p)
+        public int addFirstPayment(Payment p, float RestPayment)
         {
+            int res=0, res1=0;
             openCon();
             string query = "UPDATE [dbo].[Payments]   SET[FirstPayment] = '" + p.FirstPayment + "',[FirstPaymentDate] = '" + p.FirstPaymentDate + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
             cmd = new SqlCommand(query,con);
-            return cmd.ExecuteNonQuery();
+            res = cmd.ExecuteNonQuery();
+            if (res ==1)
+            {
+                string query1 = "UPDATE [dbo].[Payments]   SET[FullPayment] = '" + RestPayment + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
+                cmd = new SqlCommand(query1, con);
+                res1 = cmd.ExecuteNonQuery();
+            }
             closeCon();
+            return res1;
             
         }
 
@@ -99,7 +107,6 @@ namespace AnuraLearners
 
                 while (dr.Read())
                 {
-                    MessageBox.Show(dr.GetString(0));
                     idlist.Add(dr.GetString(0));
 
                 }
