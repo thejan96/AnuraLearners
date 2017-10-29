@@ -30,6 +30,7 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.grpb_second_payment = new System.Windows.Forms.GroupBox();
+            this.txtThirdPayment = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.txtThirdPaymentDate = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.btnHome = new System.Windows.Forms.Button();
-            this.txtThirdPayment = new System.Windows.Forms.TextBox();
             this.grpb_second_payment.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +82,16 @@
             this.grpb_second_payment.Size = new System.Drawing.Size(394, 299);
             this.grpb_second_payment.TabIndex = 19;
             this.grpb_second_payment.TabStop = false;
-            this.grpb_second_payment.Text = "Second Payment Details";
+            this.grpb_second_payment.Text = "Third Payment Details";
+            // 
+            // txtThirdPayment
+            // 
+            this.txtThirdPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThirdPayment.Location = new System.Drawing.Point(174, 57);
+            this.txtThirdPayment.Name = "txtThirdPayment";
+            this.txtThirdPayment.ReadOnly = true;
+            this.txtThirdPayment.Size = new System.Drawing.Size(214, 26);
+            this.txtThirdPayment.TabIndex = 19;
             // 
             // btnClear
             // 
@@ -118,6 +127,7 @@
             this.txtThirdPaymentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThirdPaymentDate.Location = new System.Drawing.Point(174, 104);
             this.txtThirdPaymentDate.Name = "txtThirdPaymentDate";
+            this.txtThirdPaymentDate.ReadOnly = true;
             this.txtThirdPaymentDate.Size = new System.Drawing.Size(214, 26);
             this.txtThirdPaymentDate.TabIndex = 12;
             // 
@@ -150,6 +160,7 @@
             this.txtFullPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFullPayment.Location = new System.Drawing.Point(167, 317);
             this.txtFullPayment.Name = "txtFullPayment";
+            this.txtFullPayment.ReadOnly = true;
             this.txtFullPayment.Size = new System.Drawing.Size(214, 26);
             this.txtFullPayment.TabIndex = 14;
             // 
@@ -175,13 +186,14 @@
             this.groupBox1.Size = new System.Drawing.Size(394, 356);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "First Payment Details";
+            this.groupBox1.Text = "First/Second Payment Details";
             // 
             // txtSecondPaymentDate
             // 
             this.txtSecondPaymentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSecondPaymentDate.Location = new System.Drawing.Point(167, 273);
             this.txtSecondPaymentDate.Name = "txtSecondPaymentDate";
+            this.txtSecondPaymentDate.ReadOnly = true;
             this.txtSecondPaymentDate.Size = new System.Drawing.Size(214, 26);
             this.txtSecondPaymentDate.TabIndex = 18;
             // 
@@ -214,6 +226,7 @@
             this.txtSecondPayement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSecondPayement.Location = new System.Drawing.Point(167, 224);
             this.txtSecondPayement.Name = "txtSecondPayement";
+            this.txtSecondPayement.ReadOnly = true;
             this.txtSecondPayement.Size = new System.Drawing.Size(214, 26);
             this.txtSecondPayement.TabIndex = 15;
             // 
@@ -234,6 +247,7 @@
             this.txtPaymentDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPaymentDate.Location = new System.Drawing.Point(169, 184);
             this.txtPaymentDate.Name = "txtPaymentDate";
+            this.txtPaymentDate.ReadOnly = true;
             this.txtPaymentDate.Size = new System.Drawing.Size(214, 26);
             this.txtPaymentDate.TabIndex = 12;
             // 
@@ -276,6 +290,7 @@
             this.txtFirstPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstPayment.Location = new System.Drawing.Point(169, 135);
             this.txtFirstPayment.Name = "txtFirstPayment";
+            this.txtFirstPayment.ReadOnly = true;
             this.txtFirstPayment.Size = new System.Drawing.Size(214, 26);
             this.txtFirstPayment.TabIndex = 8;
             // 
@@ -341,14 +356,6 @@
             this.btnHome.Size = new System.Drawing.Size(58, 49);
             this.btnHome.TabIndex = 21;
             this.btnHome.UseVisualStyleBackColor = false;
-            // 
-            // txtThirdPayment
-            // 
-            this.txtThirdPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThirdPayment.Location = new System.Drawing.Point(174, 57);
-            this.txtThirdPayment.Name = "txtThirdPayment";
-            this.txtThirdPayment.Size = new System.Drawing.Size(214, 26);
-            this.txtThirdPayment.TabIndex = 19;
             // 
             // frmThirdPayment
             // 

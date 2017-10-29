@@ -133,12 +133,22 @@ namespace AnuraLearners
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    p1.FirstPayment = Convert.ToSingle(dr[0]);
-                    p1.FirstPaymentDate = Convert.ToDateTime(dr[1]);
-                    p1.SecoundPayment = Convert.ToSingle(dr[2]);
-                    p1.SecoundPaymentDate = Convert.ToDateTime(dr[3]);
-                    p1.ThirdPayment = Convert.ToSingle(dr[4]);
-                    p1.FullPayment = Convert.ToSingle(dr[5]);
+                    try
+                    {
+                        p1.FirstPayment = Convert.ToSingle(dr[0]);
+                        p1.FirstPaymentDate = Convert.ToDateTime(dr[1]);
+                        p1.SecoundPayment = Convert.ToSingle(dr[2]);
+                        p1.FullPayment = Convert.ToSingle(dr[5]);
+                        p1.SecoundPaymentDate = Convert.ToDateTime(dr[3]);
+                        p1.ThirdPayment = Convert.ToSingle(dr[4]);
+                        
+                    }
+                    catch (InvalidCastException)
+                    {
+
+                        
+                    }
+                    
                 }
             }
             con.Close();
