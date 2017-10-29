@@ -29,39 +29,39 @@ namespace AnuraLearners
             con.Close();
         }
 
-        public int addFirstPayment(Payment p, float RestPayment)
+        public int addFirstPayment(Payment p)
         {
             int res=0, res1=0;
             openCon();
             string query = "UPDATE [dbo].[Payments]   SET[FirstPayment] = '" + p.FirstPayment + "',[FirstPaymentDate] = '" + p.FirstPaymentDate + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
             cmd = new SqlCommand(query,con);
             res = cmd.ExecuteNonQuery();
-            if (res ==1)
-            {
-                string query1 = "UPDATE [dbo].[Payments]   SET[FullPayment] = '" + RestPayment + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
-                cmd = new SqlCommand(query1, con);
-                res1 = cmd.ExecuteNonQuery();
-            }
+            //if (res ==1)
+            //{
+            //    string query1 = "UPDATE [dbo].[Payments]   SET[FullPayment] = '" + RestPayment + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
+            //    cmd = new SqlCommand(query1, con);
+            //    res1 = cmd.ExecuteNonQuery();
+            //}
             closeCon();
-            return res1;
+            return res;
             
         }
 
-        public int addSecondPayment(Payment p,float RestPayment)
+        public int addSecondPayment(Payment p)
         {
             int res = 0, res1 = 0;
             openCon();
             string query = "UPDATE [dbo].[Payments]   SET[SecondPayment] = '" + p.SecoundPayment + "',[SecondPaymentDate] = '" + p.SecoundPaymentDate + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
             cmd = new SqlCommand(query, con);
             res = cmd.ExecuteNonQuery();
-            if (res == 1)
-            {
-                string query1 = "UPDATE [dbo].[Payments]   SET[FullPayment] = '" + RestPayment + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
-                cmd = new SqlCommand(query1, con);
-                res1 = cmd.ExecuteNonQuery();
-            }
+            //if (res == 1)
+            //{
+            //    string query1 = "UPDATE [dbo].[Payments]   SET[FullPayment] = '" + RestPayment + "' WHERE [CustomerId] = '" + p.CustomerId + "'";
+            //    cmd = new SqlCommand(query1, con);
+            //    res1 = cmd.ExecuteNonQuery();
+            //}
             closeCon();
-            return res1;
+            return res;
 
         }
 

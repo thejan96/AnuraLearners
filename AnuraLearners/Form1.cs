@@ -47,7 +47,7 @@ namespace AnuraLearners
                             p1.FirstPayment = float.Parse(txtFirstPayment.Text);
                             p1.FirstPaymentDate = Convert.ToDateTime(DateTime.Today.ToShortDateString());
                             float RestPayement = float.Parse(lblFullPayment.Text) - float.Parse(txtFirstPayment.Text);
-                            int ret = db.addFirstPayment(p1, RestPayement);
+                            int ret = db.addFirstPayment(p1);
                             if (ret == 1)
                             {
                                 MessageBox.Show("Successfully Payed");

@@ -34,7 +34,7 @@ namespace AnuraLearners
                             p1.SecoundPayment = float.Parse(txtSecondPayment.Text);
                             p1.SecoundPaymentDate = Convert.ToDateTime(DateTime.Today.ToShortDateString());
                             float RestPayement = fullPayment - float.Parse(txtSecondPayment.Text);
-                            int ret = db.addSecondPayment(p1, RestPayement);
+                            int ret = db.addSecondPayment(p1);
                             if (ret == 1)
                             {
                                 MessageBox.Show("Successfully Payed");
@@ -118,11 +118,21 @@ namespace AnuraLearners
                                 frmFirstPayment f = new frmFirstPayment();
                                 f.Show();
                             }
-                            fullPayment = p.FullPayment;
-                            txtFirstPayment.Text = p.FirstPayment.ToString();
-                            txtPaymentDate.Text = p.FirstPaymentDate.ToShortDateString();
-                            txtRestPayment.Text = Convert.ToString(Convert.ToSingle(p.FullPayment) - Convert.ToSingle(p.FirstPayment));
-                            txtSecondPayment.Focus();
+                            else
+                            {
+                                fullPayment = p.FullPayment;
+                                txtFirstPayment.Text = p.FirstPayment.ToString();
+                                txtPaymentDate.Text = p.FirstPaymentDate.ToShortDateString();
+                                txtRestPayment.Text = Convert.ToString(Convert.ToSingle(p.FullPayment) - Convert.ToSingle(p.FirstPayment));
+                                txtSecondPayment.Focus();
+                            }
+                            if (txtRestPayment.Text == "0")
+                            {
+                                MessageBox.Show("Full Payment is Complete for this Customer", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                clearAllFields();
+                                txtCustomerId.Focus();
+                            }
+                            
                         }
                     }
                     catch (NullReferenceException)
@@ -152,7 +162,6 @@ namespace AnuraLearners
             txtFirstPayment.Text = "";
             txtPaymentDate.Text = "";
             txtSecondPayment.Text = "";
-            txtSecondPaymentDate.Text = "";
             txtRestPayment.Text = "";
 
         }
@@ -186,11 +195,22 @@ namespace AnuraLearners
                                 frmFirstPayment f = new frmFirstPayment();
                                 f.Show();
                             }
-                            fullPayment = p.FullPayment;
-                            txtFirstPayment.Text = p.FirstPayment.ToString();
-                            txtPaymentDate.Text = p.FirstPaymentDate.ToShortDateString();
-                            txtRestPayment.Text = Convert.ToString(Convert.ToSingle(p.FullPayment) - Convert.ToSingle(p.FirstPayment));
-                            txtSecondPayment.Focus();
+                            else
+                            {
+                                fullPayment = p.FullPayment;
+                                txtFirstPayment.Text = p.FirstPayment.ToString();
+                                txtPaymentDate.Text = p.FirstPaymentDate.ToShortDateString();
+                                txtRestPayment.Text = Convert.ToString(Convert.ToSingle(p.FullPayment) - Convert.ToSingle(p.FirstPayment));
+                                txtSecondPayment.Focus();
+                            }
+                            
+
+                            if (txtRestPayment.Text == "0")
+                            {
+                                MessageBox.Show("Full Payment is Complete for this Customer", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                clearAllFields();
+                                txtCustomerName.Focus();
+                            }
                         }
                     }
                     catch (NullReferenceException)
