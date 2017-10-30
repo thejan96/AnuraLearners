@@ -18,7 +18,8 @@ namespace AnuraLearners
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmFirstPayment());
             //Application.Run(new frmSecondPayment());
-            Application.Run(new frmThirdPayment());
+            //Application.Run(new frmThirdPayment());
+            Application.Run(new GenerateReports());
 
         }
     }

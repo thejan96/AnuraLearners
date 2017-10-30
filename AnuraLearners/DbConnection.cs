@@ -250,6 +250,29 @@ namespace AnuraLearners
                     
                    
             }
+
+        public DataTable generateRep(DateTime fromDate, DateTime toDate, int type)
+        {
+            openCon();
+            DataTable dt = new DataTable();
+            if (type == 1)
+            {
+                string query = "select * from Customer where RegistrationDate between '" + fromDate + "' and '" + toDate + "'";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                da.Fill(dt);
+            }
+            else if (type == 2)
+            {
+                string query = "select * from Customer where RegistrationDate between '" + fromDate + "' and '" + toDate + "'";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                da.Fill(dt);
+            }
+            closeCon();
+            return dt;
         }
+
+
+    }
+
 
 }

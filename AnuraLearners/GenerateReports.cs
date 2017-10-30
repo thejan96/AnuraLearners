@@ -16,5 +16,22 @@ namespace AnuraLearners
         {
             InitializeComponent();
         }
+        DbConnection db;
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GenerateReports_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            db = new DbConnection();
+            DataTable dt = db.generateRep(dtmFrom.Value, dtmTo.Value, 1);
+            dataGridView1.DataSource = dt;
+        }
     }
 }
