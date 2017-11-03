@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>Resources\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,8 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amount.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="DbConnection.cs" />
+    <Compile Include="Exam.cs" />
     <Compile Include="Exams.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +71,12 @@
     <Compile Include="GenerateReports.designer.cs">
       <DependentUpon>GenerateReports.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCustomer.designer.cs">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Payment.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,16 +92,23 @@
     <Compile Include="ThirdPayment.Designer.cs">
       <DependentUpon>ThirdPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trial.cs" />
     <Compile Include="Trials.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Trials.designer.cs">
       <DependentUpon>Trials.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCustomers.designer.cs">
+      <DependentUpon>ViewCustomers.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewPayments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewPayments.designer.cs">
+    <Compile Include="ViewPayments.Designer.cs">
       <DependentUpon>ViewPayments.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Exams.resx">
@@ -101,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GenerateReports.resx">
       <DependentUpon>GenerateReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCustomer.resx">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Trials.resx">
       <DependentUpon>Trials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCustomers.resx">
+      <DependentUpon>ViewCustomers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewPayments.resx">
       <DependentUpon>ViewPayments.cs</DependentUpon>

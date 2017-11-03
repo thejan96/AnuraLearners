@@ -19,7 +19,10 @@ namespace AnuraLearners
             //Application.Run(new frmFirstPayment());
             //Application.Run(new frmSecondPayment());
             //Application.Run(new frmThirdPayment());
-            Application.Run(new GenerateReports());
+            //Application.Run(new GenerateReports());
+            //Application.Run(new Exams());
+            //Application.Run(new Trials());
+            Application.Run(new ViewPayments());
 
         }
     }

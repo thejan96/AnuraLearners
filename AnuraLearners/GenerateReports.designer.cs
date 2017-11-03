@@ -40,7 +40,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,6 +128,7 @@
             this.btnExamReport.TabIndex = 8;
             this.btnExamReport.Text = "Exam Report";
             this.btnExamReport.UseVisualStyleBackColor = true;
+            this.btnExamReport.Click += new System.EventHandler(this.btnExamReport_Click);
             // 
             // btnTrialReport
             // 
@@ -141,6 +142,7 @@
             this.btnTrialReport.TabIndex = 9;
             this.btnTrialReport.Text = "Trial Report";
             this.btnTrialReport.UseVisualStyleBackColor = true;
+            this.btnTrialReport.Click += new System.EventHandler(this.btnTrialReport_Click);
             // 
             // btnPaymentDelay
             // 
@@ -195,18 +197,19 @@
             this.btnHome.TabIndex = 22;
             this.btnHome.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnPDF
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
-            this.button1.Location = new System.Drawing.Point(465, 330);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 42);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Export as PDF";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPDF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPDF.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPDF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
+            this.btnPDF.Location = new System.Drawing.Point(465, 330);
+            this.btnPDF.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPDF.Name = "btnPDF";
+            this.btnPDF.Size = new System.Drawing.Size(161, 42);
+            this.btnPDF.TabIndex = 23;
+            this.btnPDF.Text = "Export as PDF";
+            this.btnPDF.UseVisualStyleBackColor = true;
+            this.btnPDF.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // GenerateReports
             // 
@@ -214,7 +217,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(816, 383);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPDF);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView1);
@@ -251,6 +254,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPDF;
     }
 }
