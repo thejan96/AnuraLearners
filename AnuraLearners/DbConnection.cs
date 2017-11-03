@@ -267,9 +267,21 @@ namespace AnuraLearners
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 da.Fill(dt);
             }
-            else if (type == 2)
+            else if (type == 3)
             {
-                string query = "SELECT * from AnuraLearners.dbo.Payments Where FirstPaymentDate between '" + fromDate + "' and '" + toDate + "' OR SecondPaymentDate between '" + fromDate + "' and '" + toDate + "' OR ThirdPaymentDate between '" + fromDate + "' and '" + toDate + "'";
+                string query = "SELECT * from tblExams WHERE [ExamDate] between '" + fromDate + "' and '" + toDate + "'";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                da.Fill(dt);
+            }
+            else if (type == 4)
+            {
+                string query = "SELECT * from tblTrials WHERE [ExamDate] between '" + fromDate + "' and '" + toDate + "'";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                da.Fill(dt);
+            }
+            else if (type == 5)
+            {
+                string query = "SELECT Customer.CustomerName,Customer.CustomerTelephone,[FirstPayment],[FirstPaymentDate],[SecondPayment],[SecondPaymentDate],[ThirdPayment],[ThirdPaymentDate],[FullPayment] FROM[AnuraLearners].[dbo].[Payments] INNER JOIN AnuraLearners.dbo.Customer ON Payments.CustomerId = Customer.CustomerId WHERE (Customer.RegistrationDate between '" + fromDate + "' AND '" + toDate + "') AND (Payments.FirstPayment IS NULL OR Payments.SecondPayment IS NULL OR Payments.ThirdPayment IS NULL)";
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 da.Fill(dt);
             }

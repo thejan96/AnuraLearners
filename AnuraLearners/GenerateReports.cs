@@ -19,7 +19,9 @@ namespace AnuraLearners
         DbConnection db;
         private void button5_Click(object sender, EventArgs e)
         {
-
+            db = new DbConnection();
+            DataTable dt = db.generateRep(dtmFrom.Value, dtmTo.Value, 5);
+            dataGridView1.DataSource = dt;
         }
 
         private void GenerateReports_Load(object sender, EventArgs e)
