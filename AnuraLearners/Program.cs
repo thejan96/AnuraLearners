@@ -22,7 +22,9 @@ namespace AnuraLearners
             //Application.Run(new GenerateReports());
             //Application.Run(new Exams());
             //Application.Run(new Trials());
-            Application.Run(new ViewPayments());
+            //Application.Run(new ViewPayments());
+            Application.Run(new Home());
+
 
         }
     }

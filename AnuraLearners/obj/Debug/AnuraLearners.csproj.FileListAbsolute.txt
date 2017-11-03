@@ -25,3 +25,4 @@ D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\bin\Debug\itextsharp.dll
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.NewCustomer.resources
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.ViewCustomers.resources
 D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.ViewPayments.resources
+D:\Projects\AnuraLearners\AnuraLearners\AnuraLearners\obj\Debug\AnuraLearners.Home.resources
