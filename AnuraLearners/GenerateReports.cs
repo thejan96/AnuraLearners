@@ -33,5 +33,12 @@ namespace AnuraLearners
             DataTable dt = db.generateRep(dtmFrom.Value, dtmTo.Value, 1);
             dataGridView1.DataSource = dt;
         }
+
+        private void btnTotalIncome_Click(object sender, EventArgs e)
+        {
+            db = new DbConnection();
+            DataTable dt = db.generateRep(dtmFrom.Value, dtmTo.Value, 2);
+            dataGridView1.DataSource = dt;
+        }
     }
 }

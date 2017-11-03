@@ -38,6 +38,9 @@
             this.btnTrialReport = new System.Windows.Forms.Button();
             this.btnPaymentDelay = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +48,7 @@
             // 
             this.dtmFrom.CalendarFont = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtmFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmFrom.Location = new System.Drawing.Point(31, 72);
+            this.dtmFrom.Location = new System.Drawing.Point(36, 102);
             this.dtmFrom.Margin = new System.Windows.Forms.Padding(2);
             this.dtmFrom.Name = "dtmFrom";
             this.dtmFrom.Size = new System.Drawing.Size(190, 20);
@@ -54,24 +57,24 @@
             // lblFromDate
             // 
             this.lblFromDate.AutoSize = true;
-            this.lblFromDate.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblFromDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFromDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
-            this.lblFromDate.Location = new System.Drawing.Point(27, 49);
+            this.lblFromDate.Location = new System.Drawing.Point(32, 76);
             this.lblFromDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFromDate.Name = "lblFromDate";
-            this.lblFromDate.Size = new System.Drawing.Size(83, 21);
+            this.lblFromDate.Size = new System.Drawing.Size(99, 25);
             this.lblFromDate.TabIndex = 3;
             this.lblFromDate.Text = "From Date";
             // 
             // lblToDate
             // 
             this.lblToDate.AutoSize = true;
-            this.lblToDate.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblToDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblToDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
-            this.lblToDate.Location = new System.Drawing.Point(293, 49);
+            this.lblToDate.Location = new System.Drawing.Point(298, 76);
             this.lblToDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblToDate.Name = "lblToDate";
-            this.lblToDate.Size = new System.Drawing.Size(63, 21);
+            this.lblToDate.Size = new System.Drawing.Size(77, 25);
             this.lblToDate.TabIndex = 4;
             this.lblToDate.Text = "To Date";
             // 
@@ -79,7 +82,7 @@
             // 
             this.dtmTo.CalendarFont = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtmTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtmTo.Location = new System.Drawing.Point(297, 72);
+            this.dtmTo.Location = new System.Drawing.Point(302, 102);
             this.dtmTo.Margin = new System.Windows.Forms.Padding(2);
             this.dtmTo.Name = "dtmTo";
             this.dtmTo.Size = new System.Drawing.Size(190, 20);
@@ -111,6 +114,7 @@
             this.btnTotalIncome.TabIndex = 7;
             this.btnTotalIncome.Text = "Total Income Report";
             this.btnTotalIncome.UseVisualStyleBackColor = true;
+            this.btnTotalIncome.Click += new System.EventHandler(this.btnTotalIncome_Click);
             // 
             // btnExamReport
             // 
@@ -157,15 +161,58 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(31, 136);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(595, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(595, 176);
             this.dataGridView1.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
+            this.label4.Location = new System.Drawing.Point(30, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(207, 64);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Report Generator\r\n\r\n";
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
+            this.btnHome.BackgroundImage = global::AnuraLearners.Properties.Resources.home;
+            this.btnHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.Location = new System.Drawing.Point(752, 11);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(58, 49);
+            this.btnHome.TabIndex = 22;
+            this.btnHome.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(170)))), ((int)(((byte)(230)))));
+            this.button1.Location = new System.Drawing.Point(465, 330);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(161, 42);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Export as PDF";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // GenerateReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(884, 383);
+            this.ClientSize = new System.Drawing.Size(816, 383);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnHome);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnPaymentDelay);
             this.Controls.Add(this.btnTrialReport);
@@ -198,5 +245,8 @@
         private System.Windows.Forms.Button btnTrialReport;
         private System.Windows.Forms.Button btnPaymentDelay;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button button1;
     }
 }

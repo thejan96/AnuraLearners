@@ -263,7 +263,13 @@ namespace AnuraLearners
             }
             else if (type == 2)
             {
-                string query = "select * from Customer where RegistrationDate between '" + fromDate + "' and '" + toDate + "'";
+                string query = "SELECT * from AnuraLearners.dbo.Payments Where FirstPaymentDate between '"+fromDate+ "' and '" + toDate + "' OR SecondPaymentDate between '" + fromDate + "' and '" + toDate + "' OR ThirdPaymentDate between '" + fromDate + "' and '" + toDate + "'";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                da.Fill(dt);
+            }
+            else if (type == 2)
+            {
+                string query = "SELECT * from AnuraLearners.dbo.Payments Where FirstPaymentDate between '" + fromDate + "' and '" + toDate + "' OR SecondPaymentDate between '" + fromDate + "' and '" + toDate + "' OR ThirdPaymentDate between '" + fromDate + "' and '" + toDate + "'";
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
                 da.Fill(dt);
             }
